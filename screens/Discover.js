@@ -42,7 +42,7 @@ const Discover = () => {
 
 	return (
 		<SafeAreaView
-			style={{ marginTop: StatusBar.currentHeight + 10 }}
+			style={{ marginTop: StatusBar.currentHeight + 5 }}
 			className="flex-1 relative"
 		>
 			<View className="flex-row items-center justify-between px-8">
@@ -134,10 +134,19 @@ const Discover = () => {
 											data?.photo?.images?.medium?.url
 												? data?.photo?.images?.medium
 														?.url
-												: "https://image.similarpng.com/very-thumbnail/2021/07/Chef-restaurant-logo-illustrations-template-on-transparent-background-PNG.png"
+												: "https://logowik.com/content/uploads/images/restaurant9491.logowik.com.webp"
 										}
 										title={data?.name}
-										location={data?.location_string}
+										location={
+											data?.location_string?.indexOf(
+												","
+											) > -1
+												? data?.location_string.split(
+														","
+												  )[0]
+												: data?.location_string
+										}
+										data={data}
 									/>
 								))}
 							</>
