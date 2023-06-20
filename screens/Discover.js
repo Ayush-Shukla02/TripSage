@@ -101,7 +101,7 @@ const Discover = () => {
 							setType={setType}
 						/>
 						<MenuContainer
-							key={"hotel"}
+							key={"hotels"}
 							title="Hotels"
 							imageSrc={Hotels}
 							type={type}

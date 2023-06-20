@@ -1,12 +1,6 @@
 import axios from "axios";
 
-export const getPlacesData = async ({
-	bl_lat,
-	bl_lng,
-	tr_lat,
-	tr_lng,
-	type,
-}) => {
+export const getPlacesData = async (bl_lat, bl_lng, tr_lat, tr_lng, type) => {
 	try {
 		const {
 			data: { data },

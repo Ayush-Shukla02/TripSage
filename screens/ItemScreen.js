@@ -9,7 +9,7 @@ import {
 } from "react-native";
 import React, { useLayoutEffect } from "react";
 import { useNavigation } from "@react-navigation/native";
-import { FontAwesome, FontAwesome5, MaterialIcons } from "@expo/vector-icons";
+import { FontAwesome, MaterialIcons } from "@expo/vector-icons";
 
 const ItemScreen = ({ route }) => {
 	const navigation = useNavigation();
@@ -38,35 +38,7 @@ const ItemScreen = ({ route }) => {
 						className="w-full h-72 object-cover rounded-2xl"
 					/>
 
-					{/* <View className="absolute flex-row inset-x-0 top-5 justify-between px-6">
-						<TouchableOpacity
-							className="w-10 h-10 rounded-md items-center justify-center bg-white"
-							onPress={() => navigation.navigate("Discover")}
-						>
-							<FontAwesome5
-								name="chevron-left"
-								size={24}
-								color="#06B2BE"
-							/>
-						</TouchableOpacity>
-						<TouchableOpacity className="w-10 h-10 rounded-md items-center justify-center bg-[#06B2BE]">
-							<FontAwesome5
-								name="heartbeat"
-								size={24}
-								color="white"
-							/>
-						</TouchableOpacity>
-					</View> */}
-
 					<View className="absolute w-full flex-row bottom-5 justify-end px-6">
-						{/* <View className="flex-row space-x-2 items-center">
-							<Text className="text-[12px] font-bold text-gray-100">
-								{data?.price_level}
-							</Text>
-							<Text className="text-[32px] font-bold text-gray-100">
-								{data?.price}
-							</Text>
-						</View> */}
 						{data?.open_now_text && (
 							<View className="px-2 py-1 rounded-md bg-teal-100">
 								<Text>{data?.open_now_text}</Text>
@@ -93,7 +65,7 @@ const ItemScreen = ({ route }) => {
 					</View>
 				</View>
 
-				<View className="mt-4 flex-row items-center justify-around">
+				<View className="mt-4 flex-row items-center justify-between">
 					{data?.rating && (
 						<View className="flex-row items-center space-x-2">
 							<View className="w-10 h-10 rounded-2xl bg-red-100 items-center justify-center shadow-md">
@@ -191,7 +163,7 @@ const ItemScreen = ({ route }) => {
 
 				<TouchableOpacity
 					onPress={() => navigation.navigate("Booking")}
-					className="mt-4 px-4 py-4 rounded-lg bg-[#06B2BE] items-center justify-center mb-12"
+					className="mt-4 px-4 py-4 rounded-lg bg-[#428288] items-center justify-center mb-12"
 				>
 					<Text className="text-3xl font-semibold uppercase tracking-wider text-gray-100">
 						Book Now
