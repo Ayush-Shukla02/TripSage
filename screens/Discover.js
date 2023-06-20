@@ -24,6 +24,11 @@ const Discover = () => {
 	const [loading, setLoading] = useState(false);
 	const [mainData, setMainData] = useState([]);
 
+	const [bl_lat, setBl_lat] = useState(null);
+	const [bl_lng, setBl_lng] = useState(null);
+	const [tr_lat, setTr_lat] = useState(null);
+	const [tr_lng, setTr_lng] = useState(null);
+
 	useLayoutEffect(() => {
 		navigation.setOptions({
 			headerShown: false,
@@ -32,13 +37,13 @@ const Discover = () => {
 
 	useEffect(() => {
 		setLoading(true);
-		getPlacesData().then((data) => {
+		getPlacesData(bl_lat, bl_lng, tr_lat, tr_lng, type).then((data) => {
 			setMainData(data);
 			setInterval(() => {
 				setLoading(false);
 			}, 2000);
 		});
-	}, []);
+	}, [bl_lat, bl_lng, tr_lat, tr_lng, type]);
 
 	return (
 		<SafeAreaView
@@ -68,8 +73,10 @@ const Discover = () => {
 					placeholder="Search"
 					fetchDetails={true}
 					onPress={(data, details = null) => {
-						// 'details' is provided when fetchDetails = true
-						console.log(details?.geometry?.viewport);
+						setBl_lat(details?.geometry?.viewport?.southwest?.lat);
+						setBl_lng(details?.geometry?.viewport?.southwest?.lng);
+						setTr_lat(details?.geometry?.viewport?.northeast?.lat);
+						setTr_lng(details?.geometry?.viewport?.northeast?.lng);
 					}}
 					query={{
 						key: "AIzaSyAEDnXkSs0nntwSGUFm5Jz4jQvdKGBWfo8",
@@ -113,7 +120,7 @@ const Discover = () => {
 						<Text className="text-[#2C7379] text-[22px] font-bold capitalize">
 							Top {type}
 						</Text>
-						<TouchableOpacity className="flex-row items-center justify-center space-x-2">
+						{/* <TouchableOpacity className="flex-row items-center justify-center space-x-2">
 							<Text className="text-[#A0C4C7] text-[19px] font-bold">
 								Explore
 							</Text>
@@ -122,7 +129,7 @@ const Discover = () => {
 								size={24}
 								color="#A0C4C7"
 							/>
-						</TouchableOpacity>
+						</TouchableOpacity> */}
 					</View>
 					<View className="px-2 mt-8 flex-row items-center justify-evenly flex-wrap">
 						{mainData?.length > 0 ? (
