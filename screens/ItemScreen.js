@@ -33,7 +33,7 @@ const ItemScreen = ({ route }) => {
 						source={{
 							uri: data?.photo?.images?.large?.url
 								? data?.photo?.images?.large?.url
-								: "https://logowik.com/content/uploads/images/restaurant9491.logowik.com.webp",
+								: "https://previews.123rf.com/images/vectoroksana/vectoroksana1910/vectoroksana191043155/133048485-color-line-map-pointer-with-mountain-icon-isolated-on-white-background-mountains-travel-icon.jpg",
 						}}
 						className="w-full h-72 object-cover rounded-2xl"
 					/>

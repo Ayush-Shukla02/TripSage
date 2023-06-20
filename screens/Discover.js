@@ -16,6 +16,7 @@ import MenuContainer from "../components/MenuContainer";
 import { FontAwesome } from "@expo/vector-icons";
 import ItemCardContainer from "../components/ItemCardContainer";
 import { getPlacesData } from "../api";
+import { GOOGLE_MAPS_API_KEY } from "@env";
 
 const Discover = () => {
 	const navigation = useNavigation();
@@ -79,7 +80,7 @@ const Discover = () => {
 						setTr_lng(details?.geometry?.viewport?.northeast?.lng);
 					}}
 					query={{
-						key: "AIzaSyAEDnXkSs0nntwSGUFm5Jz4jQvdKGBWfo8",
+						key: `${GOOGLE_MAPS_API_KEY}`,
 						language: "en",
 					}}
 					onFail={(error) => console.error(error)}
@@ -120,16 +121,6 @@ const Discover = () => {
 						<Text className="text-[#2C7379] text-[22px] font-bold capitalize">
 							Top {type}
 						</Text>
-						{/* <TouchableOpacity className="flex-row items-center justify-center space-x-2">
-							<Text className="text-[#A0C4C7] text-[19px] font-bold">
-								Explore
-							</Text>
-							<FontAwesome
-								name="long-arrow-right"
-								size={24}
-								color="#A0C4C7"
-							/>
-						</TouchableOpacity> */}
 					</View>
 					<View className="px-2 mt-8 flex-row items-center justify-evenly flex-wrap">
 						{mainData?.length > 0 ? (
@@ -141,7 +132,7 @@ const Discover = () => {
 											data?.photo?.images?.medium?.url
 												? data?.photo?.images?.medium
 														?.url
-												: "https://logowik.com/content/uploads/images/restaurant9491.logowik.com.webp"
+												: "https://previews.123rf.com/images/vectoroksana/vectoroksana1910/vectoroksana191043155/133048485-color-line-map-pointer-with-mountain-icon-isolated-on-white-background-mountains-travel-icon.jpg"
 										}
 										title={data?.name}
 										location={
