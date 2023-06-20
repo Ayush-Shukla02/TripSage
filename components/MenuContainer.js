@@ -1,4 +1,4 @@
-import { Image, StyleSheet, Text, TouchableOpacity, View } from "react-native";
+import { Image, Text, TouchableOpacity, View } from "react-native";
 import React from "react";
 
 const MenuContainer = ({ title, imageSrc, type, setType }) => {
@@ -12,7 +12,7 @@ const MenuContainer = ({ title, imageSrc, type, setType }) => {
 			onPress={handlePress}
 		>
 			<View
-				className={`w-24 h-24 p-2 shadow-sm rounded-full items-center justify-center ${
+				className={`w-20 h-20 p-2 shadow-sm rounded-full items-center justify-center ${
 					type === title.toLowerCase() ? "bg-gray-300" : ""
 				}`}
 			>
@@ -21,7 +21,7 @@ const MenuContainer = ({ title, imageSrc, type, setType }) => {
 					className="w-full h-full object-cover"
 				/>
 			</View>
-			<Text className="text-[#00BCC9] text-xl font-semibold">
+			<Text className="text-[#00BCC9] text-lg font-semibold">
 				{title}
 			</Text>
 		</TouchableOpacity>
@@ -29,5 +29,3 @@ const MenuContainer = ({ title, imageSrc, type, setType }) => {
 };
 
 export default MenuContainer;
-
-const styles = StyleSheet.create({});
