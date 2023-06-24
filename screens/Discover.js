@@ -5,7 +5,6 @@ import {
 	StatusBar,
 	Image,
 	ScrollView,
-	TouchableOpacity,
 	ActivityIndicator,
 } from "react-native";
 import React, { useEffect, useLayoutEffect, useState } from "react";
@@ -13,7 +12,7 @@ import { useNavigation } from "@react-navigation/native";
 import { Attractions, Avatar, Hotels, NotFound, Restaurants } from "../assets";
 import { GooglePlacesAutocomplete } from "react-native-google-places-autocomplete";
 import MenuContainer from "../components/MenuContainer";
-import { FontAwesome } from "@expo/vector-icons";
+
 import ItemCardContainer from "../components/ItemCardContainer";
 import { getPlacesData } from "../api";
 import { GOOGLE_MAPS_API_KEY } from "@env";
@@ -139,9 +138,9 @@ const Discover = () => {
 											data?.location_string?.indexOf(
 												","
 											) > -1
-												? data?.location_string.split(
-														","
-												  )[0]
+												? data?.location_string
+														.split(",")[0]
+														.trim()
 												: data?.location_string
 										}
 										data={data}
