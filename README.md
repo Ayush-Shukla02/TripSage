@@ -9,6 +9,4 @@ TripSage is a mobile application built using React Native and Expo that helps us
 -   View ratings, reviews, photos, and other relevant information about establishments.
 -   Available on both iOS and Android platforms.
 
-### Hosting
-
 The app is hosted on Expo and can be accessed using the following link:
