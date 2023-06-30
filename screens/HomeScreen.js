@@ -44,8 +44,8 @@ const HomeScreen = () => {
 					Good Moments
 				</Text>
 				<Text className="text-[#3C6072] text-base">
-					In taciti tortor ultricies tempor bibendum sociosqu, luctus
-					vitae hendrerit.
+					Start your travel journey today and let us be your trusted
+					travel companion.
 				</Text>
 			</View>
 
@@ -64,7 +64,7 @@ const HomeScreen = () => {
 					<TouchableOpacity
 						onPress={() => navigation.navigate("Discover")}
 					>
-						<Animatable.View
+						<View
 							animation={"pulse"}
 							easing="ease-in-out"
 							iterationCount={"infinite"}
@@ -73,7 +73,7 @@ const HomeScreen = () => {
 							<Text className="text-gray-50 text-[36px] font-semibold">
 								Go
 							</Text>
-						</Animatable.View>
+						</View>
 					</TouchableOpacity>
 				</View>
 			</View>

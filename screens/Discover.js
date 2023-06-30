@@ -124,28 +124,32 @@ const Discover = () => {
 					<View className="px-2 mt-8 flex-row items-center justify-evenly flex-wrap">
 						{mainData?.length > 0 ? (
 							<>
-								{mainData?.map((data, i) => (
-									<ItemCardContainer
-										key={i}
-										imageSrc={
-											data?.photo?.images?.medium?.url
-												? data?.photo?.images?.medium
+								{mainData?.map(
+									(data, i) =>
+										data.name && (
+											<ItemCardContainer
+												key={i}
+												imageSrc={
+													data?.photo?.images?.medium
 														?.url
-												: "https://previews.123rf.com/images/vectoroksana/vectoroksana1910/vectoroksana191043155/133048485-color-line-map-pointer-with-mountain-icon-isolated-on-white-background-mountains-travel-icon.jpg"
-										}
-										title={data?.name}
-										location={
-											data?.location_string?.indexOf(
-												","
-											) > -1
-												? data?.location_string
-														.split(",")[0]
-														.trim()
-												: data?.location_string
-										}
-										data={data}
-									/>
-								))}
+														? data?.photo?.images
+																?.medium?.url
+														: "https://previews.123rf.com/images/vectoroksana/vectoroksana1910/vectoroksana191043155/133048485-color-line-map-pointer-with-mountain-icon-isolated-on-white-background-mountains-travel-icon.jpg"
+												}
+												title={data?.name}
+												location={
+													data?.location_string?.indexOf(
+														","
+													) > -1
+														? data?.location_string
+																.split(",")[0]
+																.trim()
+														: data?.location_string
+												}
+												data={data}
+											/>
+										)
+								)}
 							</>
 						) : (
 							<>
